@@ -310,7 +310,7 @@ public class PropertyController {
         return "formEasement";
     }
 
-    @PostMapping("/saveeasement")
+    @PostMapping("/saveEasement")
     public String saveEasement(@ModelAttribute("Easement") Easement easement, Model model){
         Land existingLand = landService.getLandByTitleId(easement.getTitleId());
 
@@ -720,7 +720,7 @@ public class PropertyController {
         return "formTransfer";
     }
 
-    @PostMapping("/savetransfer")
+    @PostMapping("/saveTransfer")
     public String saveTransfer(@ModelAttribute("Transfer") Transfer transfer, Model model){
         Land existingLand = landService.getLandByTitleId(transfer.getTitleId());
 
