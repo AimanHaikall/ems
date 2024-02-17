@@ -119,6 +119,8 @@ public class PropertyController {
         User loggedInUser = getLoggedInUser();
         List<Property> propertyList = propertyService.getPropertiesByUser(loggedInUser);
 
+        Long userId = loggedInUser.getId();
+        model.addAttribute("userId", userId);
         model.addAttribute("loggedInUser", loggedInUser);
         model.addAttribute("propertyList", propertyList);
         return "propertyList";
@@ -128,6 +130,9 @@ public class PropertyController {
     @GetMapping("/formbond")
     public String formbond(Model model){
         User loggedInUser = getLoggedInUser();
+
+        Long userId = loggedInUser.getId();
+        model.addAttribute("userId", userId);
 
         Property bond = new Bond();
         bond.setUser(loggedInUser);
@@ -147,6 +152,10 @@ public class PropertyController {
 
     @GetMapping("/formbondupdate/{id}")
     public String formbondupdate(@PathVariable Long id, Model model){
+        User loggedInUser = getLoggedInUser();
+
+        Long userId = loggedInUser.getId();
+        model.addAttribute("userId", userId);
 
         Bond existingBond = bondService.getBondById(id);
 
@@ -174,6 +183,9 @@ public class PropertyController {
     public String formcaveat(Model model){
         User loggedInUser = getLoggedInUser();
 
+        Long userId = loggedInUser.getId();
+        model.addAttribute("userId", userId);
+
         Property caveat = new Caveat();
         caveat.setUser(loggedInUser);
 
@@ -198,6 +210,10 @@ public class PropertyController {
 
     @GetMapping("/formcaveatupdate/{id}")
     public String formcaveatupdate(@PathVariable Long id, Model model){
+        User loggedInUser = getLoggedInUser();
+
+        Long userId = loggedInUser.getId();
+        model.addAttribute("userId", userId);
 
         Caveat existingCaveat = caveatService.getCaveatById(id);
 
@@ -225,6 +241,9 @@ public class PropertyController {
     public String formcharge(Model model){
         User loggedInUser = getLoggedInUser();
 
+        Long userId = loggedInUser.getId();
+        model.addAttribute("userId", userId);
+
         Property charge = new Charge();
         charge.setUser(loggedInUser);
 
@@ -249,6 +268,11 @@ public class PropertyController {
 
     @GetMapping("/formchargeupdate/{id}")
     public String formchargeupdate(@PathVariable Long id, Model model){
+
+        User loggedInUser = getLoggedInUser();
+
+        Long userId = loggedInUser.getId();
+        model.addAttribute("userId", userId);
 
         Charge existingCharge = chargeService.getChargeById(id);
 
@@ -276,6 +300,9 @@ public class PropertyController {
     public String formeasement(Model model){
         User loggedInUser = getLoggedInUser();
 
+        Long userId = loggedInUser.getId();
+        model.addAttribute("userId", userId);
+
         Property easement = new Easement();
         easement.setUser(loggedInUser);
 
@@ -300,6 +327,11 @@ public class PropertyController {
 
     @GetMapping("/formeasementupdate/{id}")
     public String formeasementupdate(@PathVariable Long id, Model model){
+
+        User loggedInUser = getLoggedInUser();
+
+        Long userId = loggedInUser.getId();
+        model.addAttribute("userId", userId);
 
         Easement existingeEasement = easementService.getEasementById(id);
 
@@ -327,6 +359,9 @@ public class PropertyController {
     public String formlease(Model model){
         User loggedInUser = getLoggedInUser();
 
+        Long userId = loggedInUser.getId();
+        model.addAttribute("userId", userId);
+
         Property lease = new Lease();
         lease.setUser(loggedInUser);
 
@@ -351,6 +386,11 @@ public class PropertyController {
 
     @GetMapping("/formleaseupdate/{id}")
     public String formleaseupdate(@PathVariable Long id, Model model){
+
+        User loggedInUser = getLoggedInUser();
+
+        Long userId = loggedInUser.getId();
+        model.addAttribute("userId", userId);
 
         Lease existingLease = leaseService.getLeaseById(id);
 
@@ -378,6 +418,9 @@ public class PropertyController {
     public String formmaintenance(Model model){
         User loggedInUser = getLoggedInUser();
 
+        Long userId = loggedInUser.getId();
+        model.addAttribute("userId", userId);
+
         Property maintenance = new Maintenance();
         maintenance.setUser(loggedInUser);
 
@@ -402,6 +445,11 @@ public class PropertyController {
 
     @GetMapping("/formmaintenanceupdate/{id}")
     public String formmaintenanceupdate(@PathVariable Long id, Model model){
+
+        User loggedInUser = getLoggedInUser();
+
+        Long userId = loggedInUser.getId();
+        model.addAttribute("userId", userId);
 
         Maintenance existingMaintenance = maintenanceService.getMaintenanceById(id);
 
@@ -429,6 +477,9 @@ public class PropertyController {
     public String formmortgage(Model model){
         User loggedInUser = getLoggedInUser();
 
+        Long userId = loggedInUser.getId();
+        model.addAttribute("userId", userId);
+
         Property mortgage = new Mortgage();
         mortgage.setUser(loggedInUser);
 
@@ -453,6 +504,11 @@ public class PropertyController {
 
     @GetMapping("/formmortgageupdate/{id}")
     public String formmortgageupdate(@PathVariable Long id, Model model){
+
+        User loggedInUser = getLoggedInUser();
+
+        Long userId = loggedInUser.getId();
+        model.addAttribute("userId", userId);
 
         Mortgage existingMortgage = mortgageService.getMortgageById(id);
 
@@ -480,6 +536,9 @@ public class PropertyController {
     public String formquitrent(Model model){
         User loggedInUser = getLoggedInUser();
 
+        Long userId = loggedInUser.getId();
+        model.addAttribute("userId", userId);
+
         Property quitRent = new QuitRent();
         quitRent.setUser(loggedInUser);
 
@@ -503,6 +562,11 @@ public class PropertyController {
 
     @GetMapping("/formquitrentupdate/{id}")
     public String formquitrentupdate(@PathVariable Long id, Model model){
+
+        User loggedInUser = getLoggedInUser();
+
+        Long userId = loggedInUser.getId();
+        model.addAttribute("userId", userId);
 
         QuitRent existingQuitRent = quitRentService.getQuitRentById(id);
 
@@ -530,6 +594,9 @@ public class PropertyController {
     public String formrightofway(Model model){
         User loggedInUser = getLoggedInUser();
 
+        Long userId = loggedInUser.getId();
+        model.addAttribute("userId", userId);
+
         Property rightOfWay = new RightOfWay();
         rightOfWay.setUser(loggedInUser);
 
@@ -553,6 +620,11 @@ public class PropertyController {
 
     @GetMapping("/formrightofwayupdate/{id}")
     public String formrightofwayupdate(@PathVariable Long id, Model model){
+
+        User loggedInUser = getLoggedInUser();
+
+        Long userId = loggedInUser.getId();
+        model.addAttribute("userId", userId);
 
         RightOfWay existingRightOfWay = rightOfWayService.getRightOfWayById(id);
 
@@ -580,6 +652,9 @@ public class PropertyController {
     public String formtenancy(Model model){
         User loggedInUser = getLoggedInUser();
 
+        Long userId = loggedInUser.getId();
+        model.addAttribute("userId", userId);
+
         Property tenancy = new Tenancy();
         tenancy.setUser(loggedInUser);
 
@@ -603,6 +678,11 @@ public class PropertyController {
 
     @GetMapping("/formtenancyupdate/{id}")
     public String formtenancyupdate(@PathVariable Long id, Model model){
+
+        User loggedInUser = getLoggedInUser();
+
+        Long userId = loggedInUser.getId();
+        model.addAttribute("userId", userId);
 
         Tenancy existingTenancy = tenancyService.getTenancyById(id);
 
@@ -630,6 +710,9 @@ public class PropertyController {
     public String formtransfer(Model model){
         User loggedInUser = getLoggedInUser();
 
+        Long userId = loggedInUser.getId();
+        model.addAttribute("userId", userId);
+
         Property transfer = new Transfer();
         transfer.setUser(loggedInUser);
 
@@ -654,6 +737,11 @@ public class PropertyController {
 
     @GetMapping("/formtransferupdate/{id}")
     public String formtransferupdate(@PathVariable Long id, Model model){
+
+        User loggedInUser = getLoggedInUser();
+
+        Long userId = loggedInUser.getId();
+        model.addAttribute("userId", userId);
 
         Transfer existingTransfer = transferService.getTransferById(id);
 
@@ -681,6 +769,9 @@ public class PropertyController {
     public String formutilitiesbill(Model model){
         User loggedInUser = getLoggedInUser();
 
+        Long userId = loggedInUser.getId();
+        model.addAttribute("userId", userId);
+
         Property utilitiesBill = new UtilitiesBill();
         utilitiesBill.setUser(loggedInUser);
 
@@ -705,6 +796,11 @@ public class PropertyController {
 
     @GetMapping("/formutilitiesbillupdate/{id}")
     public String formutilitiesbillupdate(@PathVariable Long id, Model model){
+
+        User loggedInUser = getLoggedInUser();
+
+        Long userId = loggedInUser.getId();
+        model.addAttribute("userId", userId);
 
         UtilitiesBill existingUtilitiesBill = utilitiesBillService.getUtilitiesBillById(id);
 
@@ -732,6 +828,9 @@ public class PropertyController {
     public String formWaqf(Model model){
         User loggedInUser = getLoggedInUser();
 
+        Long userId = loggedInUser.getId();
+        model.addAttribute("userId", userId);
+
         Property waqf = new Waqf();
         waqf.setUser(loggedInUser);
 
@@ -755,6 +854,11 @@ public class PropertyController {
 
     @GetMapping("/formwaqfupdate/{id}")
     public String formwaqfupdate(@PathVariable Long id, Model model){
+
+        User loggedInUser = getLoggedInUser();
+
+        Long userId = loggedInUser.getId();
+        model.addAttribute("userId", userId);
 
         Waqf existingWaqf = waqfService.getWaqfById(id);
 
@@ -782,6 +886,9 @@ public class PropertyController {
     public String formcash(Model model){
         User loggedInUser = getLoggedInUser();
 
+        Long userId = loggedInUser.getId();
+        model.addAttribute("userId", userId);
+
         Property cash = new Cash();
         cash.setUser(loggedInUser);
 
@@ -798,6 +905,11 @@ public class PropertyController {
 
     @GetMapping("/formcashupdate/{id}")
     public String formcashupdate(@PathVariable Long id, Model model){
+
+        User loggedInUser = getLoggedInUser();
+
+        Long userId = loggedInUser.getId();
+        model.addAttribute("userId", userId);
 
         Cash existingCash = cashService.getCashById(id);
 
@@ -825,6 +937,9 @@ public class PropertyController {
     public String formdebenture(Model model){
         User loggedInUser = getLoggedInUser();
 
+        Long userId = loggedInUser.getId();
+        model.addAttribute("userId", userId);
+
         Property debenture = new Debenture();
         debenture.setUser(loggedInUser);
 
@@ -841,6 +956,11 @@ public class PropertyController {
 
     @GetMapping("/formdebentureupdate/{id}")
     public String formdebentureupdate(@PathVariable Long id, Model model){
+
+        User loggedInUser = getLoggedInUser();
+
+        Long userId = loggedInUser.getId();
+        model.addAttribute("userId", userId);
 
         Debenture existingDebenture = debentureService.getDebentureById(id);
 
@@ -868,6 +988,9 @@ public class PropertyController {
     public String forminsurance(Model model){
         User loggedInUser = getLoggedInUser();
 
+        Long userId = loggedInUser.getId();
+        model.addAttribute("userId", userId);
+
         Property insurance = new Insurance();
         insurance.setUser(loggedInUser);
 
@@ -884,6 +1007,11 @@ public class PropertyController {
 
     @GetMapping("/forminsuranceupdate/{id}")
     public String forminsuranceupdate(@PathVariable Long id, Model model){
+
+        User loggedInUser = getLoggedInUser();
+
+        Long userId = loggedInUser.getId();
+        model.addAttribute("userId", userId);
 
         Insurance existingInsurance = insuranceService.getInsuranceById(id);
 
@@ -911,6 +1039,9 @@ public class PropertyController {
     public String formshare(Model model){
         User loggedInUser = getLoggedInUser();
 
+        Long userId = loggedInUser.getId();
+        model.addAttribute("userId", userId);
+
         Property share = new Share();
         share.setUser(loggedInUser);
 
@@ -927,6 +1058,11 @@ public class PropertyController {
 
     @GetMapping("/formshareupdate/{id}")
     public String formshareupdate(@PathVariable Long id, Model model){
+
+        User loggedInUser = getLoggedInUser();
+
+        Long userId = loggedInUser.getId();
+        model.addAttribute("userId", userId);
 
         Share existingShare = shareService.getShareById(id);
 
@@ -954,6 +1090,9 @@ public class PropertyController {
     public String formunittrust(Model model){
         User loggedInUser = getLoggedInUser();
 
+        Long userId = loggedInUser.getId();
+        model.addAttribute("userId", userId);
+
         Property unitTrust = new UnitTrust();
         unitTrust.setUser(loggedInUser);
 
@@ -970,6 +1109,11 @@ public class PropertyController {
 
     @GetMapping("/formunittrustupdate/{id}")
     public String formunittrust(@PathVariable Long id, Model model){
+
+        User loggedInUser = getLoggedInUser();
+
+        Long userId = loggedInUser.getId();
+        model.addAttribute("userId", userId);
 
         UnitTrust existingUnitTrust = unitTrustService.getUnitTrustById(id);
 
@@ -997,6 +1141,9 @@ public class PropertyController {
     public String formvehicle(Model model){
         User loggedInUser = getLoggedInUser();
 
+        Long userId = loggedInUser.getId();
+        model.addAttribute("userId", userId);
+
         Property vehicle = new Vehicle();
         vehicle.setUser(loggedInUser);
 
@@ -1023,6 +1170,11 @@ public class PropertyController {
     @GetMapping("/formvehicleupdate/{id}")
     public String formvehicleupdate(@PathVariable Long id, Model model){
 
+        User loggedInUser = getLoggedInUser();
+
+        Long userId = loggedInUser.getId();
+        model.addAttribute("userId", userId);
+        
         Vehicle exisitngVehicle = vehicleService.getVehicleById(id);
 
         model.addAttribute("Vehicle", exisitngVehicle);
